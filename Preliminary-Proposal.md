@@ -4,7 +4,9 @@ Also available in
 # Proposal for Math 571
 
 Bozhou Chen             b\*\*\*7@hawk.iit.edu
+
 Hao Zhan                 h\*\*\*4@hawk.iit.edu
+
 Xiangyu Zhao             x\*\*\*5@hawk.iit.edu
 
 ## Introduction
