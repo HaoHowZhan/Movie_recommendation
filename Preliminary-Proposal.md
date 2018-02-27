@@ -1,5 +1,7 @@
 Also available in
-<https://docs.google.com/document/d/110yPmJoNke28D6c9xQQpSHwOgi7fKRKA4LKcMNl0Z70/>
+<a href="https://docs.google.com/document/d/110yPmJoNke28D6c9xQQpSHwOgi7fKRKA4LKcMNl0Z70/">Google Slides</a>
+
+Project presentation in <a href="https://docs.google.com/presentation/d/1N6QNuUNMGp3I7v9GrSEZg01742ASuTnYSRyvAYJRfoM/edit?usp=sharing">Google Slides</a>
 
 # Proposal for Math 571
 
