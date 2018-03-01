@@ -3,6 +3,8 @@ Also available in
 
 Project presentation in <a href="https://docs.google.com/presentation/d/1N6QNuUNMGp3I7v9GrSEZg01742ASuTnYSRyvAYJRfoM/edit?usp=sharing">Google Slides</a>
 
+Project presentation script in <a href="https://docs.google.com/document/d/1YjZDlltbpcWSE2YjnmCCjqqEZ04ZlB7bU_IVPtddAV0/edit">Google Docs</a>
+
 # Proposal for Math 571
 
 Bozhou Chen             b\*\*\*7@hawk.iit.edu
