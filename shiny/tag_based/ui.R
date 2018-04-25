@@ -1,9 +1,13 @@
-
 library(shiny)
 
 shinyUI(fluidPage(
+  
+  theme = "shiny.css",
+  
   titlePanel("Tag-based Recommandation System"),
+  
   sidebarLayout(
+    ###################################################
     sidebarPanel(
       numericInput("id",
                    "movieId:",
@@ -14,17 +18,22 @@ shinyUI(fluidPage(
                    "recommandation number:",
                    min = 1,
                    max = 50,
-                   value = 10)
+                   value = 8),
+      textInput("search", "Search"),
+      tableOutput("candidates")
     ),
+    ###################################################
     mainPanel(
-      h3("Input info"),
-      tableOutput("input"),
-      htmlOutput("input_movie"),
-      h3("Top tags"),
-      tableOutput("tags"),
-      h3("Recommandations"),
-      tableOutput("table")
+      h3("Input Information"),
+      fluidRow(
+        htmlOutput("input")
+      ),
+      h3("Movies you may like"),
+      fluidRow(
+        htmlOutput("test")
+      )
     )
+    ###################################################
   )
-)
-)
+  
+))
