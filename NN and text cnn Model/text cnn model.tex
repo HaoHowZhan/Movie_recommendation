@@ -1,0 +1,70 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+	\pagestyle{empty}
+	
+	\def\layersep{2.5cm}
+	
+\begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]
+\tikzstyle{every pin edge}=[<-,shorten <=1pt]
+\tikzstyle{neuron}=[circle,fill=black!25,minimum size=17pt,inner sep=0pt]
+\tikzstyle{Embedding layer}=[neuron, fill=green!50];
+\tikzstyle{output neuron}=[neuron, fill=red!50];
+\tikzstyle{X neuron}=[neuron, fill=yellow!50];
+\tikzstyle{hidden neuron}=[neuron, fill=blue!50];
+\tikzstyle{annot} = [text width=4em, text centered]
+
+% Draw the input layer nodes
+\node[Embedding layer, pin=left:OccupationID] (I-1) at (0,-1) {};
+\node[Embedding layer, pin=left:Gender] (I-2) at (0,-2) {};
+\node[Embedding layer, pin=left:Age] (I-3) at (0,-3) {};
+\node[Embedding layer, pin=left:UserID] (I-4) at (0,-4) {};
+\node[Embedding layer, pin=left:MovieID] (I-6) at (0,-6) {};
+\node[Embedding layer, pin=left:Genres] (I-7) at (0,-7) {};
+\node[Embedding layer, pin=left:Title] (I-9) at (0,-9) {Text CNN};
+
+% Draw the hidden layer nodes
+\foreach \name / \y in {1,...,4,6,7,9}
+\path[yshift=0 cm]
+node[hidden neuron] (H-\name) at (\layersep,-\y cm) {32 $\times$1};
+
+% Draw the output layer node
+\node[output neuron, right of=H-3] (O1) {256$\times$1};
+\node[output neuron, right of=H-6] (O2) {256$\times$1};
+% Connect every node in the input layer with every node in the
+% hidden layer.
+\foreach \source in {1,2,3,4}
+\foreach \dest in {1,2,3,4}
+\path (I-\source) edge (H-\dest);
+
+\foreach \source in {6,7,9}
+\foreach \dest in {6,7,9}
+\path (I-\source) edge (H-\dest);
+
+% Connect every node in the hidden layer with the output layer
+\foreach \source in {1,...,4}
+\path (H-\source) edge (O1);
+
+\foreach \source in {6,7,9}
+\path (H-\source) edge (O2);
+
+\node[X neuron, right of=O1  ] (O3) {Rating};
+\path (O1) edge (O3);
+\path (O2) edge (O3);
+% Annotate the layers
+\node[annot,above of=H-1, node distance=1cm] (hl) {Hidden layer};
+\node[annot,above of=I-1, node distance=1cm] (i1) {Embedding layer};
+\node[annot,left of=il] {Input layer};
+\node[annot,right of=hl] {Feature layer};
+\node[annot,above of=O3, node distance=3cm] ( ) {Output layer};
+\end{tikzpicture}	
+	
+	
+	
+
+
+
+
+
+\end{document}
